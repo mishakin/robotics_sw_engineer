@@ -1,2 +1,2 @@
-# robotics_sw_engineer
+# Course Projects for Udacity Robotics Software Engineer Nanodegree
 Assigments from Udacity Robotics Software Engineer Nanodegree
