@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+
+# Catkin, VScode, build artifacts
+.catkin_workspace
+.vscode/
+build/
+devel/
+
