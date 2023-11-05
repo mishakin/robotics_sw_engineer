@@ -21,17 +21,21 @@ void drive_robot(float lin_x, float ang_z)
 // This callback function continuously executes and reads the image data
 void process_image_callback(const sensor_msgs::Image img)
 {
-
+    // Set some parameters
     int white_pixel = 255;
-    float angular_velocity_val = 0.5;
-    float linear_velocity_val = 0.5;
+
+    float angular_velocity_val = 0.5F;
+    float linear_velocity_val = 0.5F;
+    float angular_to_linear_ratio_for_turns = 2.0F;
+
     float left_border_normed = 0.33F;
     float right_border_normed = 0.66F;
 
-    bool has_white_pixel = false;
+    // Find the mean position of all detected white pixels
     float white_pixel_col_normed = -1.0;
+    float while_pixel_col_normed_counter = 0;
+    int num_white_pixels = 0;
 
-    float ball_projection_row = 0;
     for (int row = 0; row < img.height; ++row)
     {
         for (int byte_idx = 0; byte_idx < img.step; ++byte_idx)
@@ -40,28 +44,30 @@ void process_image_callback(const sensor_msgs::Image img)
             auto brightness = static_cast<int>(img.data[row * img.step + byte_idx]);
             if (brightness == white_pixel)
             {
-                has_white_pixel = true;
-                white_pixel_col_normed = col_normed;
-                break;
+                while_pixel_col_normed_counter += col_normed;
+                ++num_white_pixels;
             }
         }
-        if (has_white_pixel)
-            break;
+    }
+    if (num_white_pixels > 0)
+    {
+        white_pixel_col_normed = while_pixel_col_normed_counter / num_white_pixels;
     }
 
-    if (!has_white_pixel || white_pixel_col_normed <= 0.0F || white_pixel_col_normed >= 1.0F)
+    // Request robot's motion according to the detected position of the ball
+    if (num_white_pixels == 0)
     {
         drive_robot(0.0F, 0.0F);
         ROS_INFO_STREAM("No white ball was detected, robot stopped.");
     }
     else if (white_pixel_col_normed < left_border_normed)
     {
-        drive_robot(0.0F, angular_velocity_val);
+        drive_robot(linear_velocity_val / angular_to_linear_ratio_for_turns, angular_velocity_val);
         ROS_INFO_STREAM("White ball is to the left, rotating robot to the left");
     }
     else if (white_pixel_col_normed > right_border_normed)
     {
-        drive_robot(0.0F, -angular_velocity_val);
+        drive_robot(linear_velocity_val / angular_to_linear_ratio_for_turns, -angular_velocity_val);
         ROS_INFO_STREAM("White ball is to the right, rotating robot to the right");
     }
     else

@@ -208,20 +208,22 @@
     <parent link="chassis"/>
   </joint>
 
+  <!-- Assign colors to parts of the robot -->
+
   <gazebo reference="left_wheel">
-    <material>Gazebo/Green</material>
+    <material>Gazebo/ZincYellow</material>
   </gazebo>
 
   <gazebo reference="right_wheel">
-    <material>Gazebo/Green</material>
+    <material>Gazebo/ZincYellow</material>
   </gazebo>
 
   <gazebo reference="chassis">
-    <material>Gazebo/Blue</material>
+    <material>Gazebo/Turquoise</material>
   </gazebo>
 
   <gazebo reference="camera">
-    <material>Gazebo/Red</material>
+    <material>Gazebo/SkyBlue</material>
   </gazebo>
 
 </robot>
