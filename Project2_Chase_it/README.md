@@ -1,16 +1,16 @@
 # Project 2: Go Chase It!
 
 * [x] Basic Requirements
-    - [Submission Folder](catkin_ws/src/) with the required structure of the files.
+    - [x] [Submission Folder](catkin_ws/src/) with the required structure of the files.
 
-* [] Robot Design
+* [x] Robot Design
     - [x] Lidar and camera sensors.
     - [x] Gazebo plugins for the robot’s differential drive, lidar, and camera.
     - [x] Housed inside the world
     - [] Robot design change:
         * [x] Color
-        * [] Wheel radius
-        * [] Chassis dimensions
+        * [x] Wheel radius
+        * [x] Chassis dimensions
 
 * [x] Gazebo world
     - [x] A new world that you design on the building editor for this project.
