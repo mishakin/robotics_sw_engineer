@@ -2,4 +2,5 @@
 Assigments from Udacity Robotics Software Engineer Nanodegree
 
 1. Project 1: [Gazebo World](Project1_Build_my_world)
-1. Project 2: [Go Chase It!](Project2_Chase_it)
+2. Project 2: [Go Chase It!](Project2_Chase_it)
+3. Project 3: [Where am I?](Project3_Where_am_I)
