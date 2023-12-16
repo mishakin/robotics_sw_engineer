@@ -11,9 +11,12 @@
     <param name="base_frame_id" value="robot_footprint"/>
     <param name="global_frame_id" value="map"/>
 
-    <param name="initial_pose_x" value="-1.5"/>
-    <param name="initial_pose_y" value="-3.0"/>
-    <param name="initial_pose_a" value="-1.5707"/>
+    <param name="initial_pose_x" value="-3.0"/>
+    <param name="initial_pose_y" value="-4.0"/>    
+   
+    <!-- Tuned parameters of AMCL -->
+    <param name="min_particles" value="250"/>
+    <param name="max_particles" value="2500"/>
     
   </node>
 
@@ -30,5 +33,5 @@
     <rosparam file="$(find my_robot)/config/global_costmap_params.yaml" command="load" />
     <rosparam file="$(find my_robot)/config/base_local_planner_params.yaml" command="load" />
   </node>
-
+  
 </launch>

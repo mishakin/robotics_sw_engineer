@@ -1,0 +1,5 @@
+<launch>
+  <!-- Launch other relevant files-->
+  <include file="$(find my_robot)/launch/world.launch"/>
+  <include file="$(find my_robot)/launch/amcl.launch"/>
+</launch>
