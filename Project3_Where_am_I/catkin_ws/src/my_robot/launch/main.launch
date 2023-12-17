@@ -1,5 +1,8 @@
 <launch>
-  <!-- Launch other relevant files-->
+  <!-- Launch other relevant files -->
   <include file="$(find my_robot)/launch/world.launch"/>
   <include file="$(find my_robot)/launch/amcl.launch"/>
+  
+  <!-- Launch tele operation node -->
+  <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" respawn="false"/>
 </launch>
