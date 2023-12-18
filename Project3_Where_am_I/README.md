@@ -10,6 +10,11 @@
 
 ![Before AMCL parameters optimization](illustrations/where_am_I_after_parameter_tuning.gif) 
 
+### After AMCL parameters optimization with 2D Nav Goal
+
+![After AMCL parameters optimization with 2D Nav Goal](illustrations/where_am_I_after_parameter_tuning_2D_nav_goal.gif) 
+
+
 ## How to run
 
 1. Clone the repo `git clone https://github.com/mishakin/robotics_sw_engineer.git`
@@ -35,9 +40,9 @@
     - [x] Student's launch file contains all required nodes: 
         * [x] Map Server node `map_server` 
         * [x] AMCL node `amcl` 
-        * [x] ~~Move Base node `move_base`~~ Tele operator is used instead  
+        * [x] Move Base node `move_base`
         * [x] The student's program should be able to launch without errors
-    - [x] Student filled required parameters for AMCL ~~and move_base~~ (tele operator is used instead) in the launch file and the config file
+    - [x] Student filled required parameters for AMCL and move_base in the launch file and the config file
 
 * [x] Localization Performance
     - [x] Student's robot could quickly localize itself after being tele-operated in the student's world, or given nav_goal target.
