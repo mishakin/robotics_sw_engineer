@@ -1,7 +1,8 @@
 <launch>
+  <arg name="distro" default="noetic" />
   <!-- Launch other relevant files -->
   <include file="$(find my_robot)/launch/world.launch"/>
-  <include file="$(find my_robot)/launch/mapping.launch"/>
+  <include file="$(find my_robot)/launch/mapping_ros_$(arg distro).launch"/>
   
   <!-- Launch tele operation node -->
   <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" respawn="false"/>
