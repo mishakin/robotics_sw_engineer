@@ -3,7 +3,5 @@
   <!-- Launch other relevant files -->
   <include file="$(find my_robot)/launch/world.launch"/>
   <include file="$(find my_robot)/launch/mapping_ros_$(arg distro).launch"/>
-  
-  <!-- Launch tele operation node -->
-  <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" respawn="false"/>
+  <include file="$(find my_robot)/launch/teleop.launch"/>
 </launch>
