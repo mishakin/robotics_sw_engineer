@@ -1,7 +1,7 @@
 <!-- acml demo launcher -->
 <launch>
 <!-- Map Server -->
-  <arg name="map_file" default="$(find my_robot)/maps/Sergei_s_world.yaml"/>
+  <arg name="map_file" default="$(find my_robot)/../map/simple_world.yaml"/>
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
 
 <!-- AMCL Node -->
@@ -16,7 +16,7 @@
     <!-- Mean of the initial pose -->
     <param name="initial_pose_x" value="0.0"/>
     <param name="initial_pose_y" value="0.0"/>
-    <param name="initial_pose_a" value="-1.5707"/> 
+    <param name="initial_pose_a" value="0.0"/> 
     
     <!-- Uncertainy of the initial pose -->
     <param name="initial_cov_xx" value="0.5"/>  
