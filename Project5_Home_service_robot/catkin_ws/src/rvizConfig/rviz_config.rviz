@@ -6,6 +6,8 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /Map1
+        - /LocalCostMap1
       Splitter Ratio: 0.5
     Tree Height: 369
   - Class: rviz/Selection
