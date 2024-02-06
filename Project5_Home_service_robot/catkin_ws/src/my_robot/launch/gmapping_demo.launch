@@ -1,0 +1,20 @@
+<!-- gmapping demo launcher -->
+<launch>
+    <param name="use_sim_time" value="true"/>
+    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+      <param name="scan" value="scan" />
+      <param name="odom_frame" value="odom" />
+      <param name="base_frame" value="robot_footprint" />
+
+      <param name="linearUpdate" value="0.5"/>
+      <param name="angularUpdate" value="0.5"/>
+      <param name="temporalUpdate" value="0.5"/>
+      <param name="resampleThreshold" value="0.25"/>
+      <param name="particles" value="200"/>
+      <param name="xmin" value="-50.0"/>
+      <param name="ymin" value="-50.0"/>
+      <param name="xmax" value="50.0"/>
+      <param name="ymax" value="50.0"/>
+      <param name="delta" value="0.05"/>
+    </node>
+</launch>
