@@ -7,4 +7,4 @@ Assigments from Udacity Robotics Software Engineer Nanodegree
 4. Project 4: [Map My World](Project4_Map_my_world)
 5. Project 5: [Home Service Robot](Project5_Home_service_robot)
 
-Verified [certificate](confirm.udacity.com/e/7766213e-6dbf-11ee-a1dd-839d0ca015ce).
+Verified [certificate](https://confirm.udacity.com/e/7766213e-6dbf-11ee-a1dd-839d0ca015ce).
